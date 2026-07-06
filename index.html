@@ -13,12 +13,34 @@
 <body>
     <header>
         <img src="./public/img/logo_text.svg" alt="imagem-logotipo" class="logo">
-        <input type="text" class="search" id="search" placeholder="Buscar conversas, usuários...">
-        <div class="notifications">
-            <div class="alert-circle hidden"></div>
-            <span class="material-symbols-outlined bell">
-                notifications
-            </span>
+        <!-- Search container | desktop -->
+        <div class="search-container">
+            <div class="search-icon">
+                <span class="material-symbols-outlined">
+                    search
+                </span>
+            </div>
+            <input type="text" class="search" id="search" placeholder="Buscar conversas, usuários...">
+        </div>
+        <div class="icons">
+            <!-- Search | mobile -->
+            <div class="search-mobile-button">
+                <div class="search-icon" id="mobile-search">
+                    <span class="material-symbols-outlined">
+                        search
+                    </span>
+                </div>
+            </div>
+
+            <div class="notifications">
+                <!-- red notification dot -->
+                <div class="alert-circle hidden"></div>
+                <!-- bell icon -->
+                <span class="material-symbols-outlined bell">
+                    notifications
+                </span>
+            </div>
+
         </div>
         <div class="profile-info"></div>
     </header>
