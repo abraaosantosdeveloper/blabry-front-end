@@ -57,7 +57,6 @@
     --neutral-t80: #BEC7D4;
     --neutral-t90: #DAE3F0;
     --neutral-t95: #E9F1FF;
-
 }
 
 @font-face {
@@ -70,14 +69,18 @@
     src: url(../fonts/JetBrainsMono/JetBrainsMono-Bold.ttf);
 }
 
-
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
+body {
+    background-color: var(--neutral-t95);
+}
+
 header {
+    background-color: var(--white);
     height: 72px;
     display: flex;
     border-bottom: 1.6px solid var(--neutral-t90);
@@ -91,15 +94,34 @@ header {
     width: auto;
 }
 
+.search-container {
+    display: flex;
+    align-items: center;
+    margin-left: 32px;
+    border: 1.8px solid var(--neutral-t80);
+    border-radius: 7px;
+    transition: border-color .1s;
+}
+
+.search-container:focus-within {
+    border-color: var(--secondary-t60);
+}
+
+.search-icon {
+    color: var(--neutral-t60);
+    padding: 0 5px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+}
+
 .search {
     width: 320px;
-    height: 36px;
-    border: 1.8px solid var(--neutral-t80);
-    border-radius: 8px;
-    margin: 0 32px;
-    padding: 0 10px;
+    height: 32px;
+    border: none;
+    border-radius: 0 7px 7px 0;
+    padding: 0 12px 0 5px;
     outline: none;
-    transition: all .1s;
     font-family: Inter;
     font-weight: 500;
     color: var(--neutral-t60);
@@ -109,24 +131,23 @@ header {
     font-family: Inter;
     font-weight: 400;
     color: var(--neutral-t60);
-
 }
 
-.search:focus-visible {
-    border: 1.8px solid var(--secondary-t60);
+.icons {
+    margin-left: auto;
+    display: flex;
 }
 
 .notifications {
-    margin-left: auto;
+    margin-left: 10px;
     padding: 5px;
+    height: 36px;
     border: 2px solid var(--neutral-t80);
-    border-radius: 6px;
+    border-radius: 50%;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    width: 50px;
-    height: 40px;
     cursor: pointer;
     transition: all .2s;
     position: relative;
@@ -137,14 +158,13 @@ header {
     width: 12px;
     position: absolute;
     border-radius: 50%;
-    top: -5px;
-    right: -5px;
+    top: -2px;
+    right: -2px;
     background-color: var(--red);
 }
 
 .hidden {
     display: none;
-
 }
 
 .notifications:hover {
@@ -154,4 +174,34 @@ header {
 .material-symbols-outlined.bell {
     color: var(--neutral-t40);
     font-size: 23px;
+}
+
+.search-mobile-button {
+    margin-left: auto;
+    border: 2px solid var(--neutral-t80);
+    border-radius: 50%;
+    height: 36px;
+    transition: all .2s;
+    cursor: pointer;
+    display: none;
+}
+
+.search-mobile-button:hover {
+    background-color: var(--neutral-t95);
+
+}
+
+#mobile-search {
+    color: var(--neutral-t40);
+
+}
+
+@media screen and (max-width: 650px) {
+    .search-container {
+        display: none;
+    }
+
+    .search-mobile-button {
+        display: block;
+    }
 }
